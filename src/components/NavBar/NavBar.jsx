@@ -1,17 +1,17 @@
 import React from 'react';  
 import { NavLink } from 'react-router-dom';
-import { pages } from '../../pages';
+import Pages from '../../pages.jsx';
 
 export default function NavBar() { 
 
-const NavLinks = pages.map(
+const NavLinks = Pages.map(
     ({ path, name }) => {
         return (
             <NavLink           
             key={path}
             to={path}
             end={path === '/'}
-            className="Active"> 
+            className="font-semibold text-2xl"> 
                 &nbsp;{name}
             </NavLink>
         )
@@ -19,7 +19,9 @@ const NavLinks = pages.map(
 );
 
 return (
-    <nav>{NavLinks}</nav>
+    <nav className='bg-slate-800 shadow-lg flex items-center justify-around py-3 px-32 fixed top-0 left-0 w-full'>
+        {NavLinks}
+        </nav>
 )
 
 }

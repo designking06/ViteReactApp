@@ -13,8 +13,7 @@ function Contact() {
   );
 
   return (
-      <div id="authorization">
-        <h1>Contact</h1>
+      <div id="">
         {contactInfo}
       </div>
   );
