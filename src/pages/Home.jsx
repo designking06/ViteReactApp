@@ -5,11 +5,11 @@ import Contact from "../components/Contact/Contact"
 export default function Home() {
 
     return (
-        <div className="min-h-screen w-full flex items-center justify-center grid columns-1">
-            <div className="items-start max-w-3xl gap-5">
+        <div className="flex items-center justify-center grid columns-1">
+            <div className="max-w-3xl gap-5 my-16">
                 <Header pageTitle="Welcome Home!" />
             </div>
-            <div className="relative columns-3 gap-5">
+            <div className="relative columns-3 gap-5 mb-16">
                 <div>
                     Section 1
                 </div>
