@@ -1,11 +1,18 @@
+{/* 
+    In this file I created a To Do List container which holds the stateful logic for the list.
+    We import the component which renders the form and the component which renders the combined data list in order to maintain organization.
+*/}
+
 'use client';
 import './ToDoList.css';
 import { useEffect, useState } from "react";
 import { taskData } from "./taskData";
 import { getData } from './getData';
+import ToDoListForm from './ToDoListForm';
+import ToDoListComponent from './ToDoListComponent';
 
-export default function ToDoList() {
-    const [loading, setLoading] = useState(true);
+export default function ToDoListContainer() {
+    const [isLoading, setLoading] = useState(true);
     
     const [tasksList, setTask] = useState(taskData);
     const [combinedDataList, setDataList] = useState([]);
@@ -78,35 +85,23 @@ export default function ToDoList() {
     }, []);
 
     return (
-            loading ? <div>Loading...</div> 
-            : error ? (
-            <h2 style={{ color: 'red' }}>Error: {error.message}</h2>
-            ) : 
-            <div className="task-app">
-                <h1>To-Do List</h1>
-                <input
-                    className="task-form-input"
-                    type="text"
-                    value={inputValue}
-                    onChange={handleInputChange}
-                    placeholder="Enter a new task"
-                /><button onClick={addTask} className="task-form-button">Add Task</button>
-                
-                <ul className="task-list">
-                    {combinedDataList.map((task) => (
-                        <li key={task.id} >
-                            <span className="text">{task.completed ? <s>{task.title}</s> : task.title}</span>
-                            {!task.completed ?
-                            <button className="complete-button" onClick={() => completeTaskToggle(task.id)}>Complete
-                            </button>
-                                 :                             
-                            <button className="reset-button" onClick={() => completeTaskToggle(task.id)}>Reset
-                            </button>}
-                            <button className="delete-button" onClick={() => deleteTask(task.id)}>Delete Task</button>
-                        </li>
-                    ))}
-                </ul>
-            </div>
+        <div className="task-app">
+            <h1>To-Do List</h1>
+            <ToDoListForm 
+                inputValue={inputValue}
+                inputChangeHandler={handleInputChange}
+                onAddTask={addTask} />
+            
+            { isLoading ? <div>Loading To Do List...</div> : error ? ( <h2 style={{ color: 'red' }}>Error: {error.message}</h2> ) : 
+                <>
+
+                <ToDoListComponent
+                combinedDataList={combinedDataList}
+                completeTaskToggle={completeTaskToggle}
+                deleteTask={deleteTask} />
+                </>
+            }
+        </div>
         );
 
 };
