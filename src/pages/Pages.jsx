@@ -1,7 +1,7 @@
 import { BiLogoReact } from 'react-icons/bi';
-import Home from './pages/Home';
-import About from './pages/About';
-import ToDo from './pages/ToDo';
+import Home from './Home';
+import About from './About';
+import ToDo from './ToDo';
 
 const Pages = [
   {path: '/', name: 'Logo', element: <BiLogoReact className='text-6xl' />},
