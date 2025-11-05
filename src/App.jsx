@@ -3,7 +3,7 @@ import React, {useState, useContext, useEffect} from "react";
 import { Routes, Route } from 'react-router-dom';
 import ThemeToggle from './components/Theme/ThemeToggle.jsx';
 import Authorize from './components/Authorize';
-import Pages from './Pages.jsx';
+import Pages from './pages/Pages.jsx';
 import Contact from './components/Contact/Contact.jsx';
 import Logout from './components/Logout.jsx';
 
