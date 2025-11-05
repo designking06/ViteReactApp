@@ -1,6 +1,6 @@
 import React from 'react';  
 import { NavLink } from 'react-router-dom';
-import Pages from '../../pages.jsx';
+import Pages from '../../pages/Pages.jsx';
 
 export default function NavBar() { 
 
