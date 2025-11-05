@@ -1,6 +1,7 @@
 import React from "react";
 import Header from "../components/Header"
 import Contact from "../components/Contact/Contact"
+import VideoPlayerContainer from "../components/VideoPlayer/VideoPlayerContainer";
 
 export default function Home() {
 
@@ -8,6 +9,7 @@ export default function Home() {
         <div className="flex items-center justify-center grid columns-1">
             <div className="max-w-3xl gap-5 my-16">
                 <Header pageTitle="Welcome Home!" />
+                <VideoPlayerContainer />
             </div>
             <div className="relative columns-3 gap-5 mb-16">
                 <div>
