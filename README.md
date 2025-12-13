@@ -14,6 +14,7 @@ Pages/Routes: Login -> Home Dashboard w Nav: [ToDo, Settings]
 3. Create Authentication flow
 4. Create dashboard route w components NavBar & Greeting
 5. Create toDo route with toDoList component and addItem form
+6. Set up DevOps
 
 # React + Vite
 
